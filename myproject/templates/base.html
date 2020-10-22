@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Aubex Lizenzupdater</title>
+        {% load static %}
+        <link type="text/css" href='{% static "pages/style.css" %}'/>
+        <link rel="shortcut icon" href="https://www.aubex.de/sites/default/files/favicon.png" type="image/png">
+       <!-- <script type="text/javascript" src="{% static 'javascript.js' %}"></script> -->
+       <!-- <style>
+
+            html, body{
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
+            ::selection{
+                background-color: rgb(255,50,70);
+                color: white;
+            }
+            h1,h2,h3{
+                color: #29588C;
+                text-align: center;
+            }
+            h2{
+            }
+            nav{
+                display: block;
+                width: 100%;
+                1height: 150px;
+                padding: 15px 0;
+                background: rgba(255,255,255,0.9);
+                box-shadow: 0 0 10px 0 rgba(60,60,60,0.4);
+                display: flex;
+                position: fixed;
+                top: 0;
+            }
+            nav > div{
+                flex: 1;
+            }
+            ul{
+                display: flex;
+                width: 30%;
+            }
+            li{
+                list-style: none;
+                flex: 1;
+	            text-transform: uppercase;
+	            margin: 0 6px;
+	            font-size: 0.8em;
+            }
+            nav li > a{
+                text-decoration: none;
+	            color: #29588C;
+                padding: 9px 14px;
+                border-radius: 3px;
+                transition-duration: 250ms;
+            }
+            li > a:hover{
+                background: #29588C;
+                color: white;
+            }
+            .login-btn{
+                border: 2px solid #29588C;
+                1color: white;
+                padding: 9px 14px;
+                1border-radius: 30px;
+            }
+
+            nav img{
+                margin-left: 20%;
+            }
+
+            main{
+                padding: 200px 10% 0;
+            }
+
+            .panel{
+                border: 2px solid #29588C;
+                border-radius: 10px;
+                padding: 40px;
+                margin: 80px 0 100px;
+                background: rgb(250,250,250);
+            }
+            .panel h2{
+                text-align: left;
+                margin: 0 0 50px;
+            }
+            .panel table{
+                margin: 0 0 50px;
+                background: #d5d9d8;;
+                border-radius: 8px;
+                padding: 10px;
+            }
+            table td{
+                padding: 8px 20px;
+            }
+            input, select, textarea{
+                outline: none;
+            }
+            input{
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                padding: 8px 10px;
+                border-radius: 10px;
+                color: #29588C;
+                font-weight: 700;
+                border: 1px solid rgb(130,130,130);
+                background: rgb(250,250,250);
+            }
+            input:focus{
+                borer: 1px solid rgb(660,120,170);
+            }
+            select{
+                cursor: pointer;
+                padding: 8px 10px;
+                border-radius: 10px;
+                color: #29588C;
+                font-weight: 700;
+                border: 2px solid #29588C;
+            }
+            table.checker{
+                background: none;
+                margin: 50px 0 0;
+            }
+            .checker td:nth-child(2){
+                background: white;
+                font-weight: 600;
+                border-radius: 10px;
+                border: 1px solid rgb(180,180,180);
+                text-align: center;
+            }
+            .checker tr:first-child td:last-child{
+                background: rgb(90,255,120);
+            }
+
+            footer{
+                background: #d5d9d8;
+                bottom: 0;
+            }
+            footer p{
+                display: block;
+                padding: 40px 0;
+                text-align: center;
+                margin: 0 auto;
+                color: #434c53;
+                font-size: 0.9em;
+            }
+
+
+        </style>-->
+    </head>
+    <body>
+        {% include "navigation.html" %}
+
+        <main>
+            <h1>Lizenzrollout und Updater</h1>
+            {% block footer %}
+            {% endblock %}
+
+            <div class="panel software">
+                <h2>Lizenzprüfung</h2>
+
+                <table>
+                    <tr><td>Kundennummer</td><td><input type="text" name="kdNr"/></td></tr>
+                    <tr><td>Mandant</td><td>Mercverkauf GmbH</td></tr>
+                    <tr><td>Land</td><td>Deutschland</td></tr>
+                    <tr><td>Stadt</td><td>Stuttgart</td></tr>
+                </table>
+
+                <label>Softwarepaket</label>
+                <select name="software">
+                    <option value="">---</option>
+                    <option value="">Aureb</option>
+                    <option value="">Office 365</option>
+                    <option value="">Automotive 56</option>
+                </select>
+
+                <table class="checker">
+                    <tr><td>Lizenz</td><td id="lizenz">Aktiv</td></tr>
+                    <tr><td>Softwareversion</td><td id="version">2.0</td></tr>
+                    <tr><td>Vertragsbeginn</td><td id="vertragsbeginn">23.08.2020</td></tr>
+                    <tr><td>Vertragsende</td><td id="vertrag">23.08.2024</td></tr>
+                </table>
+
+            </div>
+
+
+
+
+            <div class="panel software">
+                <h2>Lizenzprüfung</h2>
+
+                <table>
+                    <tr><td>Kundennummer</td><td><input type="text" name="kdNr"/></td></tr>
+                    <tr><td>Kunde</td><td>Mercverkauf GmbH</td></tr>
+                    <tr><td>Land</td><td>Deutschland</td></tr>
+                </table>
+
+                <label>Softwarepaket</label>
+                <select name="software">
+                    <option value="">---</option>
+                    <option value="">Aureb</option>
+                    <option value="">Office 365</option>
+                    <option value="">Automotive 56</option>
+                </select>
+
+                <table class="checker">
+                    <tr><td>Lizenz</td><td>Aktiv</td></tr>
+                    <tr><td>Softwareversion</td><td>2.0</td></tr>
+                    <tr><td>Vertragsende</td><td>23.08.2024</td></tr>
+                </table>
+
+            </div>
+        </main>
+
+        {% include "footer.html" %}
+    </body>
+</html>
